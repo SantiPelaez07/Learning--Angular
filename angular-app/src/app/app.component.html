@@ -5,6 +5,7 @@
 
 @if (visible) {
   <h2> {{title}} </h2>
+  <div>Total: {{counter}}</div>
   @if (users != undefined && users.length > 0) {
     <table>
       <thead>
@@ -30,6 +31,8 @@
 } @else {
   <h2>¡Lo sentimos, la página no se encuentra disponible!</h2>
 }
+
+<app-counter [title]="subtitle" (counterEmmit)="setCounter($event)"></app-counter>
 
 
 
